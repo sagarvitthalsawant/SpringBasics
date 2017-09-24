@@ -1,0 +1,16 @@
+This is for com.springs
+
+@Component
+@Component annotation is a stereotype and is used at class level that makes the class a component. These classes are eligible for auto-detection through classpath scanning. In java configuration, @ComponentScan annotation is used to auto detect the component and in spring application context XML, component-scan tag is used for auto-detection through classpath. @Component annotation has a value attribute that is a component name and it will also be considered as spring bean name.
+
+@Service
+@Service annotation is a stereotype and is used at class level that makes the class a service. A service class can act as Business Service Facade of j2EE pattern. A service class implements business logic using DAO, utility classes etc. The classes annotated with @Service are auto detected through classpath scanning. Annotating a class with @Service gives a logical sense that these classes are services. If we use @Component annotation on service class instead of @Service, there is no harm but for better readability, a service class should be annotated with @Service annotation. @Service annotation is a specialization of @Component annotation. @Service annotation has the attribute as value which is the suggestion of component name as well as a spring bean name for that class.
+
+@Repository
+@Repository annotation is a stereotype and is used at class level. The class, whose behavior is to store, fetch or search data, comes to the repository category. These types of classes should be annotated with @Repository annotation for auto-detection through classpath scanning. DAO classes should be annotated with @Repository annotation for auto-detection. @Repository annotation is the specialization of @Component annotation. @Repository annotation has an attribute value which is the suggestion of component name as well as spring bean name for that class.
+
+@Controller
+@Controller annotation is a stereotype and is used at class level in spring MVC. It indicates that the class is a web controller. These classes annotated with @Controller are auto detected through classpath scanning. @Controller annotation is usually used in combination with @RequestMapping annotation in spring MVC. @Controller annotation is a specialization of @Component annotation. @Controller annotation has an attribute value which is the suggestion for component name and will also be used as spring bean name for that class.
+
+@ComponentScan and component-scan
+@ComponentScan annotation is used at class level with @Configuration. @ComponentScan defines the component scanning directives. The attribute basePackages of @ComponentScan annotation defines the directives of components for auto scanning i.e base package name . In XML the parallel tag is component-scan using which we define package name. The attribute annotation-config of component-scan is by default true and hence @Autowired annotation is detected by default while using component-scan in spring application context XML. Find Code snippet for @ComponentScan.
